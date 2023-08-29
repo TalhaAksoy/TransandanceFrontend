@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { DarkModeService } from 'src/app/services/darkMode/dark-mode.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { DarkModeService } from 'src/app/services/darkMode/dark-mode.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  constructor ( private modeState : DarkModeService ){}
+  constructor ( private modeState : DarkModeService, private router : Router ){}
 
   html : HTMLHtmlElement | null = document.querySelector("html");
   modeClick()
@@ -21,5 +22,13 @@ export class NavbarComponent {
       this.html?.setAttribute("data-theme", "dark");
       this.html?.classList.add("dark");
     }
+  }
+
+  redirectProfile(){
+    this.router.navigate(["/profile"]);
+  }
+
+  redirectSettings(){
+    this.router.navigate(["/settings"]);
   }
 }

@@ -10,6 +10,12 @@ import { SpeedDialComponent } from './component/speed-dial/speed-dial.component'
 import { NotFoundComponent } from './component/not-found/not-found.component';
 import { ChatComponent } from './component/chat/chat.component';
 import { SocialComponent } from './component/social/social.component';
+import { OauthComponent } from './component/oauth/oauth.component';
+import { ProfileComponent } from './component/profile/profile.component';
+import { MatchHistoryComponent } from './component/profile/match-history/match-history.component';
+import { SettingsComponent } from './component/settings/settings.component';
+import { SettingIconComponent } from './component/settings/setting-icon/setting-icon.component';
+import { GameComponent } from './component/game/game.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +26,13 @@ import { SocialComponent } from './component/social/social.component';
     SpeedDialComponent,
     NotFoundComponent,
     ChatComponent,
-    SocialComponent
+    SocialComponent,
+    OauthComponent,
+    ProfileComponent,
+    MatchHistoryComponent,
+    SettingsComponent,
+    SettingIconComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,10 @@ import { HomeComponent } from './component/home/home.component';
 import { NotFoundComponent } from './component/not-found/not-found.component';
 import { ChatComponent } from './component/chat/chat.component';
 import { SocialComponent } from './component/social/social.component';
+import { ProfileComponent } from './component/profile/profile.component';
+import { SettingsComponent } from './component/settings/settings.component';
+import { GameComponent } from './component/game/game.component';
+import { SettingIconComponent } from './component/settings/setting-icon/setting-icon.component';
 
 const routes: Routes = [
   {
@@ -23,6 +27,22 @@ const routes: Routes = [
   {
     path: 'social',
     component: SocialComponent
+  },
+  {
+    path: "profile",
+    component: ProfileComponent
+  },
+  {
+    path: "settings",
+    component: SettingsComponent
+  },
+  {
+    path: "game",
+    component: GameComponent
+  },
+  {
+    path: "settingIcon",
+    component: SettingIconComponent
   },
   {
     path:"**",
