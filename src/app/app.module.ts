@@ -16,6 +16,8 @@ import { MatchHistoryComponent } from './component/profile/match-history/match-h
 import { SettingsComponent } from './component/settings/settings.component';
 import { SettingIconComponent } from './component/settings/setting-icon/setting-icon.component';
 import { GameComponent } from './component/game/game.component';
+import { InviteFriendComponent } from './component/game/invite-friend/invite-friend.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,11 +34,13 @@ import { GameComponent } from './component/game/game.component';
     MatchHistoryComponent,
     SettingsComponent,
     SettingIconComponent,
-    GameComponent
+    GameComponent,
+    InviteFriendComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

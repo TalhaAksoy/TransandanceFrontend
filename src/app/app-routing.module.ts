@@ -9,6 +9,8 @@ import { ProfileComponent } from './component/profile/profile.component';
 import { SettingsComponent } from './component/settings/settings.component';
 import { GameComponent } from './component/game/game.component';
 import { SettingIconComponent } from './component/settings/setting-icon/setting-icon.component';
+import { InviteFriendComponent } from './component/game/invite-friend/invite-friend.component';
+import { OauthComponent } from './component/oauth/oauth.component';
 
 const routes: Routes = [
   {
@@ -16,6 +18,7 @@ const routes: Routes = [
     component: LoginComponent,
     pathMatch:'full'
   },
+  
   {
     path: "home",
     component: HomeComponent
@@ -37,12 +40,16 @@ const routes: Routes = [
     component: SettingsComponent
   },
   {
+    path: "settingIcon",
+    component: SettingIconComponent
+  },
+  {
     path: "game",
     component: GameComponent
   },
   {
-    path: "settingIcon",
-    component: SettingIconComponent
+    path: "auth/callback",
+    component: OauthComponent,
   },
   {
     path:"**",

@@ -1,5 +1,17 @@
 <div class="w-full min-h-screen flex flex-col overflow-hidden">
     <app-navbar></app-navbar>
-    <div class="flex flex-1 justify-start items-center"></div>
+    <div class="flex flex-1 flex-row w-4/5 h-screen overflow-hidden justify-center items-center border-white gap-y-5 mx-auto ">
+        <div class="flex flex-row w-auto h-full justify-center items-center gap-x-4 border-2 p-4 rounded-lg">
+            <button class="btn dark:btn-primary btn-info w-40 h-32" (click)="clickInviteFriend()">Arkadaşını davet et</button>
+            <button class="btn dark:btn-primary btn-info w-40 h-32">Mod Şeç</button>
+            <button class="btn dark:btn-primary btn-info w-40 h-32">Secondary</button>
+            <button class="btn dark:btn-primary btn-info w-40 h-32">Accent</button>
+        </div>
+        <div class="flex flex-col bg-pink-400 justify-center items-center gap-y-4">
+            <dialog id="my_modal_1" class="modal md:w-1/2 md:h-5/6 w-full h-full shadow-md dark:shadow-white shadow-black border-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
+                <app-invite-friend></app-invite-friend>
+            </dialog>
+        </div>
+    </div>
     <app-speed-dial></app-speed-dial>
 </div>
