@@ -18,6 +18,7 @@ import { SettingIconComponent } from './component/settings/setting-icon/setting-
 import { GameComponent } from './component/game/game.component';
 import { InviteFriendComponent } from './component/game/invite-friend/invite-friend.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FirstLoginComponent } from './component/first-login/first-login.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     SettingsComponent,
     SettingIconComponent,
     GameComponent,
-    InviteFriendComponent
+    InviteFriendComponent,
+    FirstLoginComponent
   ],
   imports: [
     BrowserModule,

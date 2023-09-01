@@ -29,10 +29,11 @@ export class OauthComponent {
     console.log(this.code);
 
     const user : AuthModel | any = this.authServ.setUser();
-    if (this.loginServ.getLoginState() === true){
-      console.log(this.loginServ.getLoginState());
-      this.router.navigate(['/home']);
-    }
+    // if (this.loginServ.getLoginState() === true){
+    //   console.log(this.loginServ.getLoginState());
+    //   this.router.navigate(['/home']);
+    // }
+    this.router.navigate(['/login/first']);
     console.log(this.loginServ.getLoginState());
   }
 

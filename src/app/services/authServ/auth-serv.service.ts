@@ -26,6 +26,7 @@ export class AuthServService {
     const code = localStorage.getItem('code');
     if (code){
       this.getData(code).subscribe(response => {
+        console.log("response =>",response);
         localStorage.setItem('user', JSON.stringify(response));
       })
     }

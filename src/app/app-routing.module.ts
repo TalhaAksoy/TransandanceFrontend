@@ -11,6 +11,7 @@ import { GameComponent } from './component/game/game.component';
 import { SettingIconComponent } from './component/settings/setting-icon/setting-icon.component';
 import { InviteFriendComponent } from './component/game/invite-friend/invite-friend.component';
 import { OauthComponent } from './component/oauth/oauth.component';
+import { FirstLoginComponent } from './component/first-login/first-login.component';
 
 const routes: Routes = [
   {
@@ -18,7 +19,6 @@ const routes: Routes = [
     component: LoginComponent,
     pathMatch:'full'
   },
-  
   {
     path: "home",
     component: HomeComponent
@@ -45,11 +45,15 @@ const routes: Routes = [
   },
   {
     path: "game",
-    component: GameComponent
+    component: GameComponent,
   },
   {
     path: "auth/callback",
     component: OauthComponent,
+  },
+  {
+    path:"login/first",
+    component: FirstLoginComponent
   },
   {
     path:"**",

@@ -1,0 +1,28 @@
+<div class="w-full h-screen overflow-hidden flex flex-col">
+      <div class="flex flex-1 flex-col w-full h-screen  p-30 md:overflow-hidden overflow-y-scroll justify-center items-center">
+        <div class="flex flex-col w-1/2 md:h-auto py-4  rounded-lg justify-center items-center shadow-lg dark:shadow-white shadow-gray-900 gap-y-4">
+      
+          <img src="assets/img/stella.jpeg" class="w-3/12 justify-center items-center border-red-600 rounded-full py-4"/>
+          <input type="submit" value="Submit" class="btn py-4" onclick="my_modal_1.showModal()" />
+          <dialog id="my_modal_1" class="modal md:w-1/2 md:h-5/6 w-full h-full shadow-md dark:shadow-white shadow-black border-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
+              <app-setting-icon></app-setting-icon>
+          </dialog>
+          <input
+            type="text"
+            placeholder="Type here"
+            class="input input-bordered w-full max-w-xs py-4"/>
+      
+            
+            <div class="flex md:flex-row flex-col justify-center items-center md:gap-x-2 gap-x-0 md:gap-y-0 gap-y-2 p-4">
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input id="checkBox" (change)="onCheckboxChange()" [checked]="twoFAenable" type="checkbox" value="" class="sr-only peer">
+                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                    <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">2FA</span>
+                </label>
+                <img src="/assets/img/stella.jpeg" *ngIf="twoFAenable" alt="qr" class=" w-36 h-36">
+            </div>
+            <input type="submit" (click)="redirectHome()" value="Submit" class="btn py-4" />
+        </div>
+      </div>
+  </div>
+  

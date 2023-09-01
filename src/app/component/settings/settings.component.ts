@@ -9,5 +9,10 @@ import { Router } from '@angular/router';
 export class SettingsComponent {
 
   constructor (private router: Router) {}
+  twoFAenable : boolean = false;
 
+  onCheckboxChange(){
+    this.twoFAenable = !this.twoFAenable;
+    console.log(this.twoFAenable);
+  }
 }

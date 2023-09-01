@@ -1,4 +1,4 @@
-import { Component, ViewContainerRef } from '@angular/core';
+import { Component, EventEmitter, Output, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { InviteFriendComponent } from './invite-friend/invite-friend.component';
 
@@ -11,24 +11,9 @@ export class GameComponent {
   
   constructor(private router: Router, private viewContainerRef: ViewContainerRef) {}
 
-  clickHide(){
-    const alertDiv = this.viewContainerRef.element.nativeElement.querySelector('#alert');
-    if (alertDiv) {
-      alertDiv.remove();
-    }
-  }
+  showDiv : boolean  = false;
 
-  clickInviteFriend() {
-    const alertDiv = document.createElement('div');
-    alertDiv.id = 'alert';
-    alertDiv.classList.add();
-    alertDiv.innerText = 'Friend Add Succesfully :3';
-    alertDiv.addEventListener('click', () => this.clickHide());
-    this.viewContainerRef.element.nativeElement.appendChild();
-  }
-
-  navigateToFriend()
-  {
-    
+  toggleDiv(){
+    this.showDiv = !this.showDiv;
   }
 }
