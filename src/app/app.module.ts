@@ -19,6 +19,9 @@ import { GameComponent } from './component/game/game.component';
 import { InviteFriendComponent } from './component/game/invite-friend/invite-friend.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FirstLoginComponent } from './component/first-login/first-login.component';
+import { SelectModeComponent } from './component/game/select-mode/select-mode.component';
+import { GameEndComponent } from './component/game/game-end/game-end.component';
+import { GameLoadingComponent } from './component/game/game-loading/game-loading.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { FirstLoginComponent } from './component/first-login/first-login.compone
     SettingIconComponent,
     GameComponent,
     InviteFriendComponent,
-    FirstLoginComponent
+    FirstLoginComponent,
+    SelectModeComponent,
+    GameEndComponent,
+    GameLoadingComponent
   ],
   imports: [
     BrowserModule,

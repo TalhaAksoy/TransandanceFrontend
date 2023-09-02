@@ -12,8 +12,14 @@ export class GameComponent {
   constructor(private router: Router, private viewContainerRef: ViewContainerRef) {}
 
   showDiv : boolean  = false;
+  showMod : boolean = false;
 
   toggleDiv(){
     this.showDiv = !this.showDiv;
+  }
+
+  modDiv()
+  {
+    this.showMod = !this.showMod;
   }
 }

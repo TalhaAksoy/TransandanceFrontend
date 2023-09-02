@@ -12,6 +12,8 @@ import { SettingIconComponent } from './component/settings/setting-icon/setting-
 import { InviteFriendComponent } from './component/game/invite-friend/invite-friend.component';
 import { OauthComponent } from './component/oauth/oauth.component';
 import { FirstLoginComponent } from './component/first-login/first-login.component';
+import { GameLoadingComponent } from './component/game/game-loading/game-loading.component';
+import { GameEndComponent } from './component/game/game-end/game-end.component';
 
 const routes: Routes = [
   {
@@ -54,6 +56,14 @@ const routes: Routes = [
   {
     path:"login/first",
     component: FirstLoginComponent
+  },
+  {
+    path: "game/loading",
+    component: GameLoadingComponent
+  },
+  {
+    path: "game/end",
+    component: GameEndComponent
   },
   {
     path:"**",
