@@ -8,9 +8,14 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class SelectModeComponent {
   @Input() showMod : boolean = false;
   @Output() modDiv = new EventEmitter();
-
+  isLoading : boolean = false;
+  
   closeDiv(){
     this.modDiv.emit(false);
     console.log(this.showMod);
+  }
+
+  loading(){
+    
   }
 }

@@ -13,4 +13,9 @@ export class GameLoadingComponent {
   {
     this.router.navigate(["/home"]);
   }
+
+  closeDiv()
+  {
+    
+  }
 }

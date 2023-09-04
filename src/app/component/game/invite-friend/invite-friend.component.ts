@@ -14,4 +14,6 @@ export class InviteFriendComponent {
     this.toggleDiv.emit(false);
     console.log(this.showDiv);
   }
+
+  
 }
