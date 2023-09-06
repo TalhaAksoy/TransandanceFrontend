@@ -14,6 +14,8 @@ import { OauthComponent } from './component/oauth/oauth.component';
 import { FirstLoginComponent } from './component/first-login/first-login.component';
 import { GameLoadingComponent } from './component/game/game-loading/game-loading.component';
 import { GameEndComponent } from './component/game/game-end/game-end.component';
+import { AuthGuard } from './guards/auth.guard';
+import { MatchMakingComponent } from './component/game/match-making/match-making.component';
 
 const routes: Routes = [
   {
@@ -64,6 +66,10 @@ const routes: Routes = [
   {
     path: "game/end",
     component: GameEndComponent
+  },
+  {
+    path: "game/matchmaking",
+    component: MatchMakingComponent
   },
   {
     path:"**",

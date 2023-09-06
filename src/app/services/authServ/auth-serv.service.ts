@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthModel } from 'src/app/models/auth.model';
 import { LoginServService } from '../loginServ/login-serv.service';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthServService {
-
+  private apiUrl = "http://10.11.31.3:4000";
   constructor(private http: HttpClient, private loginServ : LoginServService) { }
 
   httpOptions = {
@@ -18,24 +19,8 @@ export class AuthServService {
     })
   };
 
-  getData = (code_ : string) => {
-    return this.http.post("http://10.11.31.03:4000/auth/callback", {code : code_}, this.httpOptions);
-  }
-
-  setUser() : AuthModel | any{
-    const code = localStorage.getItem('code');
-    if (code){
-      this.getData(code).subscribe(response => {
-        console.log("response =>",response);
-        localStorage.setItem('user', JSON.stringify(response));
-      })
-    }
-
-    const userStr = localStorage.getItem('user');
-    if (userStr){
-      const user : AuthModel = JSON.parse(userStr);
-      this.loginServ.setLoginState();
-      return user;
-    }
-  }
+  sendToken(code_ : string) : Observable<AuthModel>
+  {
+    return this.http.post<AuthModel>('http://10.11.31.3:4000/auth/callback', {code : code_});
+  }  
 }

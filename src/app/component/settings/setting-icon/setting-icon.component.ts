@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-setting-icon',
@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./setting-icon.component.scss']
 })
 export class SettingIconComponent {
-
+  @Input() imgPath!:string;
+  @Output() changePhoto = new EventEmitter();
   constructor() {}
-
   images: string[] = [
     "assets/img/darcy.jpeg",
     "assets/img/doge.jpeg",
@@ -33,6 +33,7 @@ export class SettingIconComponent {
     const startIndex = src.indexOf("assets");
     const relativeSrc = src.substring(startIndex);
     console.log(relativeSrc);
+    this.changePhoto.emit(relativeSrc);
   }
 
 }

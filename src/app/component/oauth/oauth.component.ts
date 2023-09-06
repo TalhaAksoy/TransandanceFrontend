@@ -18,23 +18,39 @@ export class OauthComponent {
     private router: Router,
   ) {}
   code: string = '';
-  
-  ngOnInit() {
+  user!:AuthModel ;
+  async ngOnInit() {
     // 10.02.31.03:4000
     this.activatedRoute.queryParams.subscribe((params) => {
       this.code = params['code'];
       localStorage.setItem('code', this.code);
-      //this.postData(code);
     });
     console.log(this.code);
 
-    const user : AuthModel | any = this.authServ.setUser();
-    // if (this.loginServ.getLoginState() === true){
-    //   console.log(this.loginServ.getLoginState());
-    //   this.router.navigate(['/home']);
-    // }
-    this.router.navigate(['/login/first']);
-    console.log(this.loginServ.getLoginState());
+
+    try {
+      const data = await this.authServ.sendToken(this.code).toPromise();
+      this.user = data as AuthModel;
+    } catch (error) {
+      console.error(error);
+      this.loginServ.setLoginState(false);
+      this.router.navigate(['']);
+    }
+    console.log("user ...", this.user.user);
+    const localData = localStorage.getItem('userData');
+    
+    if (localData){
+      localStorage.removeItem('userData');
+      localStorage.setItem('userData', JSON.stringify(this.user));
+      this.loginServ.setLoginState(true);
+    }else{
+      localStorage.setItem('userData', JSON.stringify(this.user));
+      this.loginServ.setLoginState(true);
+    }
+    console.log(this.loginServ.getLoginState())
+    if(this.loginServ.getLoginState())
+      this.router.navigate(['/login/first']);
   }
+
 
 }

@@ -22,6 +22,7 @@ import { FirstLoginComponent } from './component/first-login/first-login.compone
 import { SelectModeComponent } from './component/game/select-mode/select-mode.component';
 import { GameEndComponent } from './component/game/game-end/game-end.component';
 import { GameLoadingComponent } from './component/game/game-loading/game-loading.component';
+import { MatchMakingComponent } from './component/game/match-making/match-making.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { GameLoadingComponent } from './component/game/game-loading/game-loading
     FirstLoginComponent,
     SelectModeComponent,
     GameEndComponent,
-    GameLoadingComponent
+    GameLoadingComponent,
+    MatchMakingComponent
   ],
   imports: [
     BrowserModule,

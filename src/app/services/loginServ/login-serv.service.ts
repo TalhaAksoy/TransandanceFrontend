@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,14 +8,14 @@ export class LoginServService {
 
   constructor() { }
 
-  loginState : boolean = false;
+  private loginState$ = new BehaviorSubject<boolean>(false);
 
-  setLoginState(){
-    this.loginState = true;
+  setLoginState(state : boolean){
+    this.loginState$.next(state);
     console.log("State Updated");
   }
 
-  getLoginState(){
-    return this.loginState;
+  getLoginState() : Observable<boolean>{
+    return this.loginState$.asObservable();
   }
 }
